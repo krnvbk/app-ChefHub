@@ -21,7 +21,7 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 ## Modelo Relacional
 ### 1. Tabla de Usuarios
 Almacena información sobre los usuarios registrados.
-  1. usuario_id (INT UNSIGNED, PK, AUTO_INCREMENT): Identificador único del usuario.
+  1. usuario_id (INT, PK, AUTO_INCREMENT): Identificador único del usuario.
   2. nombre (VARCHAR(100)): Nombre del usuario.
   3. correo_elect (VARCHAR(100), UNIQUE): Correo electrónico del usuario.
   4. contrasena (VARCHAR(255)): Contraseña encriptada del usuario.
