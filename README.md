@@ -8,7 +8,7 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 ## Ingredientes y Medidas:
 - La base de datos incluirá una tabla de ingredientes comunes utilizados en la cocina ecuatoriana, junto con sus medidas estándar y nombres en español.
 ## Usuarios y Comunidad:
-- Los usuarios podrán registrarse, iniciar sesión y (__contribuir__) al repositorio de recetas. Podrán subir nuevas recetas, comentar y valorar las recetas existentes, y seguir a otros usuarios.
+- Los usuarios podrán registrarse, iniciar sesión y [__contribuir__] al repositorio de recetas. Podrán subir nuevas recetas, comentar y valorar las recetas existentes, y seguir a otros usuarios.
 
 # Modelo Relacional
 Adjuntar el modelo
