@@ -115,10 +115,9 @@ Claro, a continuación se detallan los tipos de relaciones entre las tablas crea
 - Clave foránea: `receta_id` en `Valoraciones` que referencia a `receta_id` en `Recetas`.
 
 
-# Desarrollo de propuestas 
+## Desarrollo de propuestas 
 
-## Página de Inicio
-### 1. Bienvenida y Registro/Inicio de Sesión:
+### 1. Página de inicio
 - Al ingresar al sitio web, los usuarios verán una página de bienvenida con opciones claras para **"Registrarse"** o **"Iniciar Sesión"**. 
 - La página también incluirá una breve descripción de ChefHub y sus funcionalidades.
 
