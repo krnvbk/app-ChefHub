@@ -115,5 +115,67 @@ Claro, a continuación se detallan los tipos de relaciones entre las tablas crea
 - Clave foránea: `receta_id` en `Valoraciones` que referencia a `receta_id` en `Recetas`.
 
 
-# Desarrollo de propuestas
-Escribir sobre la solución a realizar
+# Desarrollo de propuestas 
+
+## Página de Inicio
+### 1. Bienvenida y Registro/Inicio de Sesión:
+- Al ingresar al sitio web, los usuarios verán una página de bienvenida con opciones claras para **"Registrarse"** o **"Iniciar Sesión"**. 
+- La página también incluirá una breve descripción de ChefHub y sus funcionalidades.
+
+### 2. Registro e Inicio de Sesión
+#### Formulario de Registro:
+- Los usuarios completarán un formulario con los siguientes campos: **Nombre, Correo Electrónico, Contraseña y Confirmación de Contraseña.
+Validación de la entrada del usuario** (asegurar que el correo electrónico tenga el formato correcto y que las contraseñas coincidan).
+- Al enviar, el backend verificará si el correo ya está registrado y, si todo es correcto, creará un nuevo usuario en la base de datos.
+#### Formulario de Inicio de Sesión:
+- Los usuarios ingresarán su correo electrónico y contraseña.
+
+### 3. Página Principal 
+Una vez autenticado, al usuario se le mostrará:
+- **Recetas Destacadas:** Una selección de recetas destacadas o populares.
+- **Opciones de Navegación:** Botones para ver todas las recetas, mis recetas, y opciones de perfil.
+- **Búsqueda Avanzada:** Un formulario de búsqueda con filtros para buscar recetas por nombre, tipo de postre, ingredientes y etiquetas.
+
+### 4. Listado de Recetas
+- Mostrará una lista de todas las recetas disponibles, con una breve descripción, imagen, tiempo de preparación, y valoración promedio.
+- Opción para filtrar y ordenar las recetas por diferentes criterios (por ejemplo, más recientes, mejor valoradas).
+
+### 5. Detalles de Recetas
+Al hacer clic en una receta, se mostrará una página detallada con:
+- Nombre del postre
+- Imagen del postre
+- Descripción detallada
+- Lista de ingredientes con cantidades precisas
+- Pasos de preparación detallados
+- Tiempo de preparación total
+- Valoraciones y comentarios de otros usuarios
+- Botones para valorar y comentar
+
+### 6. Búsqueda Avanzada
+- Formulario de Búsqueda:Campo de texto para buscar por nombre de postre.
+- Filtros desplegables para tipo de postre (tortas, dulces, panes, etc.), etiquetas (tradicional, festivo, sin gluten, etc.), y tiempo de preparación.
+- Resultados mostrados en tiempo real conforme se aplican los filtros.
+
+### 7. Valoración y Comentarios:
+- Los usuarios pueden dejar una valoración (de 1 a 5 estrellas) y escribir un comentario.
+- Los comentarios se mostrarán en orden cronológico, con la opción de responder a comentarios existentes.
+
+### 8. Creación y Gestión de Recetas
+- Formulario para agregar una nueva receta, incluyendo campos para: Nombre del postre, Descripción, Ingredientes (con cantidades y medidas), Pasos de preparación, Tipo de postre (categoría), Tiempo de preparación y Subir imagen.
+Validación de datos antes de enviar al backend.
+- Al guardar, la receta se añadirá a la base de datos y será visible en el listado de recetas.
+
+### 9. Editar y Eliminar Recetas:
+- Los usuarios pueden editar o eliminar sus propias recetas.
+Botones de "Editar" y "Eliminar" estarán disponibles en la página de detalle de cada receta del usuario.
+- La edición abrirá un formulario prellenado con los datos actuales de la receta, permitiendo modificaciones.
+
+### 10. Perfil de Usuario
+#### Página de Perfil:
+- Muestra la información del usuario (Nombre, Correo Electrónico).
+- Lista de recetas creadas por el usuario.
+- Opciones para editar perfil y cambiar contraseña.
+- Historial de comentarios y valoraciones.
+
+### 11. Interacción Social
+- Compartir en Redes Sociales: Botones para compartir recetas en Facebook e Instagram.
