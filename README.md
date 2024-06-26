@@ -30,7 +30,7 @@ Almacena información sobre los usuarios registrados.
   4. contrasena (VARCHAR(255)): Contraseña encriptada del usuario.
   5. fecha_registro (DATETIME): Fecha de registro del usuario.
 
-NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/assets/168390188/0e0020d1-84af-4674-ab27-4cc115c57f48)
+NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/blob/main/BD/chefhub.sql)
 
 ### 2. Tabla de Recetas
 Almacena información detallada sobre cada receta de postre ecuatoriano.
