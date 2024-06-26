@@ -17,108 +17,21 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 ### 6. Valoración y Comentarios:
 - Los usuarios podrán dejar comentarios y valoraciones en las recetas, proporcionando retroalimentación y recomendaciones basadas en su experiencia.
 
-
+   
 ## Modelo Relacional
-### 1. Tabla de Usuarios
-Almacena información sobre los usuarios registrados.
 
 ![image](https://github.com/krnvbk/app-ChefHub/assets/168390188/0e0020d1-84af-4674-ab27-4cc115c57f48)
+   
+## Tablas Principales
 
-  1. usuario_id (INT, PK, AUTO_INCREMENT): Identificador único del usuario.
-  2. nombre (VARCHAR(100)): Nombre del usuario.
-  3. correo_elect (VARCHAR(100), UNIQUE): Correo electrónico del usuario.
-  4. contrasena (VARCHAR(255)): Contraseña encriptada del usuario.
-  5. fecha_registro (DATETIME): Fecha de registro del usuario.
+  1. Usuarios: Almacena información sobre los usuarios registrados.
+  2. Recetas: Almacena información detallada sobre cada receta de postre ecuatoriano.
+  3. Ingredientes: Contiene una lista de ingredientes comunes utilizados en las recetas.
+  4. Recetas_Ingredientes: Relaciona cada receta con los ingredientes necesarios, especificando la cantidad requerida para cada uno.
+  5. Comentarios: Almacena comentarios de los usuarios en las recetas.
+  6. Valoraciones: Registra las valoraciones de los usuarios para cada receta.
 
 NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/blob/main/BD/chefhub.sql)
-
-### 2. Tabla de Recetas
-Almacena información detallada sobre cada receta de postre ecuatoriano.
-  1. receta_id (INT, PK, AUTO_INCREMENT): Identificador único de la receta.
-  2. nombre_postre (VARCHAR(100)): Nombre del postre.
-  3. descripcion (TEXT): Descripción de la receta.
-  4. tiempo_preparacion (INT): Tiempo de preparación en minutos.
-  5. imagen (VARCHAR(255)): URL de la imagen del postre.
-  6. tipo_postre (VARCHAR(50)): Tipo de postre (tortas, dulces, panes, bizcochos, aderezos).
-  7. usuario_id (INT, FK): Referencia al usuario que creó la receta.
-
-### 3. Tabla de Ingredientes
-Contiene una lista de ingredientes comunes utilizados en las recetas.
-  1. ingrediente_id (INT, PK, AUTO_INCREMENT): Identificador único del ingrediente.
-  2. nombre (VARCHAR(100)): Nombre del ingrediente.
-  3. categoria (VARCHAR(50)): Categoría del ingrediente.
-  4. medida_estandar (VARCHAR(50)): Unidad de medida estándar.
-
-### 4. Tabla de Recetas_Ingredientes
-Relaciona cada receta con los ingredientes necesarios, especificando la cantidad requerida para cada uno.
-  1. receta_ingrediente_id (INT, PK, AUTO_INCREMENT): Identificador único de la relación.
-  2. receta_id (INT, FK): Referencia a la receta.
-  3. ingrediente_id (INT, FK): Referencia al ingrediente.
-  4. cantidad (DECIMAL(10,2)): Cantidad requerida del ingrediente.
-  5. unidad (VARCHAR(50)): Unidad de medida de la cantidad.
-
-### 5. Tabla de Comentarios
-Almacena comentarios de los usuarios en las recetas.
-  1. comentario_id (INT, PK, AUTO_INCREMENT): Identificador único del comentario.
-  2. texto (TEXT): Texto del comentario.
-  3. fecha_comentario (DATETIME): Fecha en que se realizó el comentario.
-  4. usuario_id (INT, FK): Referencia al usuario que hizo el comentario.
-  5. receta_id (INT, FK): Referencia a la receta comentada.
-
-### 6. Tabla de Valoraciones
-Registra las valoraciones de los usuarios para cada receta.
-  1. valoracion_id (INT, PK, AUTO_INCREMENT): Identificador único de la valoración.
-  2. valor (INT): Valor de la valoración (por ejemplo, de 1 a 5).
-  3. usuario_id (INT, FK): Referencia al usuario que hizo la valoración.
-  4. receta_id (INT, FK): Referencia a la receta valorada.
-  5. fecha_valoracion (DATETIME): Fecha en que se realizó la valoración.
-
-
-## Relaciones entre Tablas
-Claro, a continuación se detallan los tipos de relaciones entre las tablas creadas, especificando si son de uno a uno (1:1), de uno a varios (1:N) o de varios a uno (N:1):
-
-### 1. Relación entre Usuarios y Recetas
-**Tipo:** 1:N (uno a varios)
-- Un usuario puede crear múltiples recetas.
-- Un receta es creada por un único usuario.
-- Clave foránea: `usuario_id` en `Recetas` que referencia a `usuario_id` en `Usuarios`.
-
-### 2. Relación entre Recetas y Recetas_Ingredientes
-**Tipo:** 1:N (uno a varios)
-- Una receta puede tener múltiples registros en `Recetas_Ingredientes` (cada uno representando un ingrediente con su cantidad).
-- Un registro en `Recetas_Ingredientes` pertenece a una única receta.
-- Clave foránea: `receta_id` en `Recetas_Ingredientes` que referencia a `receta_id` en `Recetas`.
-
-### 3. Relación entre Ingredientes y Recetas_Ingredientes
-**Tipo:** 1:N (uno a varios)
-- Un ingrediente puede estar presente en múltiples registros en `Recetas_Ingredientes`.
-- Un registro en `Recetas_Ingredientes` pertenece a un único ingrediente.
-- Clave foránea: `ingrediente_id` en `Recetas_Ingredientes` que referencia a `ingrediente_id` en `Ingredientes`.
-
-### 4. Relación entre Usuarios y Comentarios
-**Tipo:** 1:N (uno a varios)
-- Un usuario puede hacer múltiples comentarios.
-- Un comentario es hecho por un único usuario.
-- Clave foránea: `usuario_id` en `Comentarios` que referencia a `usuario_id` en `Usuarios`.
-
-### 5. Relación entre Recetas y Comentarios
-**Tipo:** 1:N (uno a varios)
-- Una receta puede tener múltiples comentarios.
-- Un comentario pertenece a una única receta.
-- Clave foránea: `receta_id` en `Comentarios` que referencia a `receta_id` en `Recetas`.
-
-### 6. Relación entre Usuarios y Valoraciones
-**Tipo:** 1:N (uno a varios)
-- Un usuario puede hacer múltiples valoraciones.
-- Una valoración es hecha por un único usuario.
-- Clave foránea: `usuario_id` en `Valoraciones` que referencia a `usuario_id` en `Usuarios`.
-
-### 7. Relación entre Recetas y Valoraciones
-**Tipo:** 1:N (uno a varios)
-- Una receta puede tener múltiples valoraciones.
-- Una valoración pertenece a una única receta.
-- Clave foránea: `receta_id` en `Valoraciones` que referencia a `receta_id` en `Recetas`.
-
 
 ## Desarrollo de propuestas 
 
