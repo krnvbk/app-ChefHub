@@ -21,11 +21,16 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 ## Modelo Relacional
 ### 1. Tabla de Usuarios
 Almacena información sobre los usuarios registrados.
+
+![image](https://github.com/krnvbk/app-ChefHub/assets/168390188/0e0020d1-84af-4674-ab27-4cc115c57f48)
+
   1. usuario_id (INT, PK, AUTO_INCREMENT): Identificador único del usuario.
   2. nombre (VARCHAR(100)): Nombre del usuario.
   3. correo_elect (VARCHAR(100), UNIQUE): Correo electrónico del usuario.
   4. contrasena (VARCHAR(255)): Contraseña encriptada del usuario.
   5. fecha_registro (DATETIME): Fecha de registro del usuario.
+
+NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/assets/168390188/0e0020d1-84af-4674-ab27-4cc115c57f48)
 
 ### 2. Tabla de Recetas
 Almacena información detallada sobre cada receta de postre ecuatoriano.
