@@ -63,3 +63,5 @@ Una vez autenticado, al usuario se le mostrará un menú con las siguientes opci
 
   Validación de datos antes de enviar al backend. Al guardar, la receta se añadirá a la base de datos y será visible en el listado de recetas.
 
+- **Salir**: Simplemente se cerrará el programa con un amigable mensaje de despedida, así como los créditos (nombre del autor).
+
