@@ -1,0 +1,17 @@
+import mysql.connector
+
+# Establecer la conexión a la base de datos chefhub
+db = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    database = "chefhub"
+)
+
+# Verificar si la conexión fue exitosa
+if db.is_connected():
+    print("Conexión exitosa a MySQL")
+else:
+    print("Error al conectar con MySQL")
+
+# Cerrar la conexión
+db.close()
