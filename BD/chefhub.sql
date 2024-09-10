@@ -85,4 +85,3 @@ INSERT INTO recetas_ingredientes VALUES
 INSERT INTO comentarios VALUES (null, '¡Esta torta es increíble! La recomiendo totalmente.', '2024-06-21 15:30:00', 2, 1);
 
 INSERT INTO valoraciones VALUES (null, 5, 2, 1, '2024-06-21 16:45:00');
-'2024-06-21 16:45:00');
