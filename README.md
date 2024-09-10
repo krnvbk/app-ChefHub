@@ -52,7 +52,7 @@ Una vez autenticado, al usuario se le mostrará un menú con las siguientes opci
 - **Buscar receta:** Un formulario de búsqueda con filtros para buscar recetas por nombre, tipo de postre y etiquetas. Automáticamente, se presentan todas las coincidencias posibles, unicamente por nombre de postre.
     - **Visualizar receta**: Aparece luego de devolver todas las coincidencias. Muestra toda la información disponible de la receta que desee en el usuario, por medio de indicar su nombre.
       - Se mostrará una página detallada con la informacion correspondiente y la valoracion promedio.
-    - **Dejar una valoración:** Aparece luego de visualizar una receta en especifico (emplea con dicional, esta es un menú opcional). El usuario puede dejar una valoración (de 1 a 5 estrellas), de la cual posteriormente se calculará el promedio
+    - **Dejar una valoración:** Aparece luego de visualizar una receta en especifico (emplea condicional, esta es un menú opcional). El usuario puede dejar una valoración (de 1 a 5 estrellas), de la cual posteriormente se calculará el promedio
  
 - **Crear receta**: Un formulario que permitirá agregar una receta a la base de datos, incluyendo campos para:
   - Nombre del postre
