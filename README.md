@@ -4,14 +4,14 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 
 ## Funcionalidades Clave:
 ### 1. Recetas de Postres:
-- Cada receta incluirá detalles específicos como __el nombre del postre, una descripción, lista de ingredientes con cantidades precisas, preparación detallada, tiempo de preparación.__
+- Cada receta incluirá detalles específicos como __el nombre del postre, tipo de postre una descripción, lista de ingredientes con cantidades precisas, preparación detallada, tiempo de preparación.__
 - Las recetas estarán categorizadas por tipos de postres ecuatorianos como __"postres fríos", "postres calientes"__.
 ### 2. Ingredientes y Medidas:
 - La base de datos incluirá una tabla de ingredientes comunes utilizados en la cocina ecuatoriana, junto con sus medidas estándar y nombres en español.
 ### 3. Usuarios y Comunidad:
 - Los usuarios podrán __registrarse__, __iniciar sesión__ y __contribuir__ al repositorio de recetas. Podrán subir nuevas recetas y valorar las recetas existentes.
 ### 4. Búsqueda Avanzada:
-- Los usuarios podrán buscar recetas por nombre de postre, tipo de postre y etiquetas: (__"tradicional", "festivo", "familiar", "sin azúcar" y "sin gluten"__)
+- Los usuarios podrán buscar recetas por nombre de postre o tipo de postre.
 ### 5. Valoración:
 - Los usuarios podrán dejar valoraciones en las recetas, viendose reflejada en un promedio de valoraciones.
 
@@ -47,15 +47,17 @@ Validación de la entrada del usuario** (asegurar que el correo electrónico ten
 Una vez autenticado, al usuario se le mostrará un menú con las siguientes opciones:
 - **Mostrar recetas existentes**
     - Mostrará una lista de todas las recetas disponibles, con tiempo de preparación, y valoración promedio.
-    - Opción para filtrar y ordenar las recetas por diferentes criterios (por ejemplo, más recientes, mejor valoradas).
+    - Opción para filtrar y ordenar las recetas por diferentes criterios (**más recientes** y  **mejor valoradas**).
 
-- **Buscar receta:** Un formulario de búsqueda con filtros para buscar recetas por nombre, tipo de postre y etiquetas. Automáticamente, se presentan todas las coincidencias posibles, unicamente por nombre de postre.
-    - **Visualizar receta**: Aparece luego de devolver todas las coincidencias. Muestra toda la información disponible de la receta que desee en el usuario, por medio de indicar su nombre.
+- **Buscar receta:** Un formulario de búsqueda con filtros para buscar recetas por nombre o tipo de postre. Automáticamente, se presentan todas las coincidencias posibles, unicamente por nombre de postre.
+    - **Visualizar receta**: Aparece luego de devolver todas las coincidencias. Muestra toda la información disponible de la receta que desee en el usuario, por medio de indicar su número asignado.
       - Se mostrará una página detallada con la informacion correspondiente y la valoracion promedio.
     - **Dejar una valoración:** Aparece luego de visualizar una receta en especifico (emplea condicional, esta es un menú opcional). El usuario puede dejar una valoración (de 1 a 5 estrellas), de la cual posteriormente se calculará el promedio
  
 - **Crear receta**: Un formulario que permitirá agregar una receta a la base de datos, incluyendo campos para:
   - Nombre del postre
+  - Tipo de postre
+  - Etiqueta
   - Descripción
   - Preparación
   - Lista de ingredientes con cantidades precisas
