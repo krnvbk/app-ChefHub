@@ -38,16 +38,6 @@ CREATE TABLE recetas_ingredientes (
     FOREIGN KEY (ingrediente_id) REFERENCES ingredientes(ingrediente_id)
 );
 
-CREATE TABLE comentarios (
-    comentario_id INT AUTO_INCREMENT PRIMARY KEY,
-    texto TEXT NOT NULL,
-    fecha_comentario DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    usuario_id INT NOT NULL,
-    receta_id INT NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
-    FOREIGN KEY (receta_id) REFERENCES recetas(receta_id)
-);
-
 CREATE TABLE valoraciones (
     valoracion_id INT AUTO_INCREMENT PRIMARY KEY,
     valor INT NOT NULL,
@@ -81,7 +71,5 @@ INSERT INTO recetas_ingredientes VALUES
 (null, 1, 6, 200.00, 'mililitros'),  -- Crema de leche
 (null, 1, 7, 10.00, 'gramos'),  -- Polvo de hornear
 (null, 1, 8, 5.00, 'mililitros');  -- Vainilla
-
-INSERT INTO comentarios VALUES (null, '¡Esta torta es increíble! La recomiendo totalmente.', '2024-06-21 15:30:00', 2, 1);
 
 INSERT INTO valoraciones VALUES (null, 5, 2, 1, '2024-06-21 16:45:00');
