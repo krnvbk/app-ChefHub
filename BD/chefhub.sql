@@ -46,8 +46,8 @@ CREATE TABLE valoraciones (
     FOREIGN KEY (receta_id) REFERENCES recetas(receta_id)
 );
 
-INSERT INTO usuarios VALUES (null, 'María Pérez', 'maria.perez@example.com', 'password123', '2024-06-21 10:00:00');
-INSERT INTO usuarios VALUES (null, 'Chritine May', 'crissmay5@example.com', 'il0vec4ts', '2024-06-21 12:10:00');
+INSERT INTO usuarios VALUES (null, 'María Pérez', 'maria.perez@example.com', 'password123');
+INSERT INTO usuarios VALUES (null, 'Chritine May', 'crissmay5@example.com', 'il0vec4ts');
 
 INSERT INTO recetas VALUES (null, 'Torta de Tres Leches', 'Deliciosa torta esponjosa empapada en una mezcla de tres tipos de leche.', 90, 'imagen_torta_tres_leches.jpg', 'tortas', 1);
 INSERT INTO ingredientes VALUES
@@ -70,4 +70,4 @@ INSERT INTO recetas_ingredientes VALUES
 (null, 1, 7, 10.00, 'gramos'),  -- Polvo de hornear
 (null, 1, 8, 5.00, 'mililitros');  -- Vainilla
 
-INSERT INTO valoraciones VALUES (null, 5, 2, 1, '2024-06-21 16:45:00');
+INSERT INTO valoraciones VALUES (null, 5, 2, 1);
