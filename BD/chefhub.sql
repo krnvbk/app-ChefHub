@@ -14,7 +14,6 @@ CREATE TABLE recetas (
     nombre_postre VARCHAR(100) NOT NULL,
     descripcion TEXT NOT NULL,
     tiempo_preparacion INT NOT NULL,
-    imagen VARCHAR(255) NOT NULL,
     tipo_postre VARCHAR(50) NOT NULL,
     usuario_id INT NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id)
@@ -49,7 +48,7 @@ CREATE TABLE valoraciones (
 INSERT INTO usuarios VALUES (null, 'María Pérez', 'maria.perez@example.com', 'password123');
 INSERT INTO usuarios VALUES (null, 'Chritine May', 'crissmay5@example.com', 'il0vec4ts');
 
-INSERT INTO recetas VALUES (null, 'Torta de Tres Leches', 'Deliciosa torta esponjosa empapada en una mezcla de tres tipos de leche.', 90, 'imagen_torta_tres_leches.jpg', 'tortas', 1);
+INSERT INTO recetas VALUES (null, 'Torta de Tres Leches', 'Deliciosa torta esponjosa empapada en una mezcla de tres tipos de leche.', 90, 'tortas', 1);
 INSERT INTO ingredientes VALUES
 (null, 'Harina', 'Secos', 'gramos'),
 (null, 'Azúcar', 'Secos', 'gramos'),
