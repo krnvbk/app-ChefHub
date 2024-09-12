@@ -7,7 +7,6 @@ CREATE TABLE usuarios (
     nombre VARCHAR(100) NOT NULL,
     correo_electronico VARCHAR(100) UNIQUE NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
-    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
 CREATE TABLE recetas (
@@ -43,7 +42,6 @@ CREATE TABLE valoraciones (
     valor INT NOT NULL,
     usuario_id INT,
     receta_id INT,
-    fecha_valoracion DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
     FOREIGN KEY (receta_id) REFERENCES recetas(receta_id)
 );
