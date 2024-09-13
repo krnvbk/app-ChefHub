@@ -72,3 +72,5 @@ INSERT INTO recetas_ingredientes VALUES
 INSERT INTO valoraciones VALUES (null, 5, 2, 1);
 
 select * from recetas;
+
+select * from usuarios;
