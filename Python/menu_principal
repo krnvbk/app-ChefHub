@@ -95,7 +95,7 @@ def buscar_receta(conexion):
 # Crear receta
 def crear_receta(conexion):
     nombre_postre = input("Nombre del postre: ").strip()
-    tipo_postre = input("Tipo de postre: ").strip()
+    tipo_postre = input("Tipo de postre(postre caliente/postre frío): ").strip()
     descripcion = input("Descripción: ").strip()
     tiempo_preparacion = int(input("Tiempo de preparación (en minutos): ").strip())
     
