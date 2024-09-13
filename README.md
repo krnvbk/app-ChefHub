@@ -32,8 +32,8 @@ NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://g
 
 ## Desarrollo de propuestas 
 
-### 1. Página de inicio
-- Al ingresar al sitio web, los usuarios verán una página de bienvenida con opciones claras para **"Registrarse"** o **"Iniciar Sesión"**. 
+### 1. Menú de Inicio
+- Al iniciar el programa, los usuarios verán un saludo bienvenida con opciones claras para **"Registrarse"** o **"Iniciar Sesión"**. 
 
 ### 2. Registro e Inicio de Sesión
 #### Formulario de Registro:
