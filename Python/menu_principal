@@ -1,6 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
-from registro_usuarios import App
+from registro_Usuarios import App
 
 # Conexión a la base de datos
 def crear_conexion():
@@ -8,8 +8,7 @@ def crear_conexion():
         conexion = mysql.connector.connect(
             host='localhost',
             database='chefhub',
-            user='root',
-            password='lab1122xx--'
+            user='root'
         )
         if conexion.is_connected():
             return conexion
