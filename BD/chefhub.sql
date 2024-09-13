@@ -48,7 +48,7 @@ CREATE TABLE valoraciones (
 INSERT INTO usuarios VALUES (null, 'María Pérez', 'maria.perez@example.com', 'password123');
 INSERT INTO usuarios VALUES (null, 'Chritine May', 'crissmay5@example.com', 'il0vec4ts');
 
-INSERT INTO recetas VALUES (null, 'Torta de Tres Leches', 'Deliciosa torta esponjosa empapada en una mezcla de tres tipos de leche.', 90, 'tortas', 1);
+INSERT INTO recetas VALUES (null, 'Torta de Tres Leches', 'Deliciosa torta esponjosa empapada en una mezcla de tres tipos de leche.', 90, 'Postres fríos', 1);
 INSERT INTO ingredientes VALUES
 (null, 'Harina', 'Secos', 'gramos'),
 (null, 'Azúcar', 'Secos', 'gramos'),
@@ -70,3 +70,5 @@ INSERT INTO recetas_ingredientes VALUES
 (null, 1, 8, 5.00, 'mililitros');  -- Vainilla
 
 INSERT INTO valoraciones VALUES (null, 5, 2, 1);
+
+select * from recetas;
