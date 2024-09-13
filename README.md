@@ -5,6 +5,9 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 ## Contexto del Problema
 La gastronomía ecuatoriana, rica en tradición, carece de un acceso centralizado a recetas de postres, lo que dificulta que tanto locales como extranjeros las descubran y preparen. Esto resalta la necesidad de una plataforma digital que permita a los usuarios descubrir, compartir y preservar recetas tradicionales, con un enfoque en la autenticidad. A pesar del interés en la cocina ecuatoriana, el acceso a recetas detalladas y valoradas es limitado. El reto es crear una plataforma fácil de usar, que permita a los usuarios registrar, valorar y gestionar recetas, con funciones avanzadas de búsqueda.
 
+## Analisis de requerimiento
+Busca ser una plataforma única que recopile recetas de postres ecuatorianos, permitiendo a los usuarios descubrir, compartir y valorar recetas tradicionales. Para lograr esto, es esencial definir con claridad todas las necesidades del sistema, cómo se gestionarán los datos, y cuál será la lógica de negocio. A continuación, se presenta un análisis detallado, abarcando tanto las necesidades funcionales como no funcionales, asegurando que todos los aspectos del sistema estén cubiertos de manera comprensible y humanizada.
+
 ## Funcionalidades Clave:
 ### 1. Recetas de Postres:
 - Cada receta incluirá detalles específicos como __el nombre del postre, tipo de postre una descripción, lista de ingredientes con cantidades precisas, preparación detallada, tiempo de preparación.__
