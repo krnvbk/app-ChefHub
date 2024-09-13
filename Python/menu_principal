@@ -7,8 +7,7 @@ def crear_conexion():
         conexion = mysql.connector.connect(
             host='localhost',
             database='chefhub',
-            user='root',
-            password = 'K.ppw100@!'
+            user='root'
         )
         if conexion.is_connected():
             return conexion
