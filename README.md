@@ -1,5 +1,5 @@
 # app-ChefHub
-## Descripción
+## Introducción
 El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatorianos que tiene como objetivo que usuarios puedan descubrir recetas tradicionales de postres ecuatorianos. Esta base de datos será una herramienta útil tanto para entusiastas de la cocina como para aquellos interesados en la gastronomía ecuatoriana, proporcionando una colección diversa de recetas detalladas y auténticas.
 
 ## Funcionalidades Clave:
@@ -30,7 +30,7 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
 
 NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/blob/main/BD/chefhub.sql)
 
-## Desarrollo de propuestas 
+## Diseño del Sistema
 
 ### 1. Menú de Inicio
 - Al iniciar el programa, los usuarios verán un saludo bienvenida con opciones claras para **"Registrarse"** o **"Iniciar Sesión"**. 
@@ -52,7 +52,7 @@ Una vez autenticado, al usuario se le mostrará un menú con las siguientes opci
 - **Buscar receta:** Un formulario de búsqueda con filtros para buscar recetas por nombre o tipo de postre. Automáticamente, se presentan todas las coincidencias posibles, unicamente por nombre de postre.
     - **Visualizar receta**: Aparece luego de devolver todas las coincidencias. Muestra toda la información disponible de la receta que desee en el usuario, por medio de indicar su número asignado.
       - Se mostrará una página detallada con la informacion correspondiente y la valoracion promedio.
-    - **Dejar una valoración:** Aparece luego de visualizar una receta en especifico (emplea condicional, esta es un menú opcional). El usuario puede dejar una valoración (de 1 a 5 estrellas), de la cual posteriormente se calculará el promedio
+    - **Dejar una valoración:** Aparece luego de visualizar una receta en especifico (emplea condicional, esto es opcional). El usuario puede dejar una valoración (de 1 a 5 estrellas), de la cual posteriormente se calculará el promedio
  
 - **Crear receta**: Un formulario que permitirá agregar una receta a la base de datos, incluyendo campos para:
   - Nombre del postre
