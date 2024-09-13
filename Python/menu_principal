@@ -16,12 +16,25 @@ def crear_conexion():
         print("Error al conectar a la base de datos", e)
         return None
 
+# Valoración de la receta en estrellas
+def estrellas(valoracion):
+    try:
+        valoracion = int((valoracion))
+        if valoracion == 0:
+            return 'Sin valoración'
+        valoracion = max(1, min(5, valoracion))
+        estrellas_llenas = '★' * valoracion
+        estrellas_vacias = '☆' * (5 - valoracion)
+        return estrellas_llenas + estrellas_vacias
+    except ValueError:
+        return 'Sin valoración'
+
 # Mostrar recetas existentes
 def mostrar_recetas(conexion):
     cursor = conexion.cursor(dictionary=True)
     cursor.execute("""
         SELECT recetas.receta_id, recetas.nombre_postre, recetas.tiempo_preparacion, 
-        IFNULL(AVG(valoraciones.valor), 'Sin valoración') as valoracion_promedio
+        IFNULL(AVG(valoraciones.valor), 0) as valoracion_promedio
         FROM recetas
         LEFT JOIN valoraciones ON recetas.receta_id = valoraciones.receta_id
         GROUP BY recetas.receta_id
@@ -30,13 +43,15 @@ def mostrar_recetas(conexion):
     recetas = cursor.fetchall()
     print("Recetas Disponibles:")
     for receta in recetas:
-        print(f"ID: {receta['receta_id']} - {receta['nombre_postre']} (Tiempo: {receta['tiempo_preparacion']} min) - Valoración: {receta['valoracion_promedio']}")
+        valoracion_promedio = receta['valoracion_promedio']
+        valoracion_estrellas = estrellas(valoracion_promedio)
+        print(f"ID: {receta['receta_id']} - {receta['nombre_postre']} (Tiempo: {receta['tiempo_preparacion']} min) - Valoración: {valoracion_estrellas}")
 
 # Visualizar receta
 def visualizar_receta(conexion, receta_id):
     cursor = conexion.cursor(dictionary=True)
     cursor.execute("""
-        SELECT recetas.*, IFNULL(AVG(valoraciones.valor), 'Sin valoración') as valoracion_promedio
+        SELECT recetas.*, IFNULL(AVG(valoraciones.valor), 0) as valoracion_promedio
         FROM recetas
         LEFT JOIN valoraciones ON recetas.receta_id = valoraciones.receta_id
         WHERE recetas.receta_id = %s
@@ -45,10 +60,12 @@ def visualizar_receta(conexion, receta_id):
     receta = cursor.fetchone()
 
     if receta:
+        valoracion_promedio = receta['valoracion_promedio']
+        valoracion_estrellas = estrellas(valoracion_promedio)
         print(f"\n{receta['nombre_postre']} - {receta['tipo_postre']}")
         print(f"Tiempo de preparación: {receta['tiempo_preparacion']} minutos")
         print(f"Descripción: {receta['descripcion']}")
-        print(f"Valoración promedio: {receta['valoracion_promedio']}")
+        print(f"Valoración promedio: {valoracion_estrellas}")
         return True
     else:
         print("Receta no encontrada.")
@@ -59,11 +76,23 @@ def dejar_valoracion(conexion, receta_id):
     while True:
         opcion = input("¿Desea dejar una valoración? (si/no): ").strip().lower()
         if opcion == 'si':
-            valor = int(input("Ingrese la valoración (1-5): ").strip())
+            while True:
+                try:
+                    valor = int(input("Ingrese la valoración (1-5): ").strip())
+                    if 1 <= valor <= 5:
+                        break
+                    else:
+                        print("La valoración debe estar entre 1 y 5.")
+                except ValueError:
+                    print("Por favor, ingrese un número entero válido.")
+
             cursor = conexion.cursor()
             cursor.execute("INSERT INTO valoraciones (valor, usuario_id, receta_id) VALUES (%s, %s, %s)", (valor, 1, receta_id))
             conexion.commit()
-            print("Valoración registrada exitosamente. ¡Gracias por tu aporte!")
+
+            # Mostrar la valoración en estrellas
+            valoracion_estrellas = estrellas(valor)
+            print(f"Valoración registrada exitosamente: {valoracion_estrellas}. ¡Gracias por tu aporte!")
             break
         elif opcion == 'no':
             print("Gracias por tu tiempo. Regresando al menú principal...")
@@ -101,6 +130,7 @@ def crear_receta(conexion):
     tiempo_preparacion = int(input("Tiempo de preparación (en minutos): ").strip())
 
     cursor = conexion.cursor()
+
     # Cambiar 0 por un usuario_id válido
     cursor.execute("""
         INSERT INTO recetas (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, usuario_id)
