@@ -18,7 +18,7 @@ El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatori
    
 ## Modelo Relacional
 
-![image](https://github.com/krnvbk/app-ChefHub/assets/168390188/0e0020d1-84af-4674-ab27-4cc115c57f48)
+![image](img/modelorelacional.jpg)
    
 ## Tablas Principales
 
