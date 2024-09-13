@@ -8,7 +8,8 @@ def crear_conexion():
         conexion = mysql.connector.connect(
             host='localhost',
             database='chefhub',
-            user='root'
+            user='root',
+            password='lab1122xx--'
         )
         if conexion.is_connected():
             return conexion
@@ -22,10 +23,11 @@ def estrellas(valoracion):
         valoracion = int((valoracion))
         if valoracion == 0:
             return 'Sin valoración'
-        valoracion = max(1, min(5, valoracion))
-        estrellas_llenas = '★' * valoracion
-        estrellas_vacias = '☆' * (5 - valoracion)
-        return estrellas_llenas + estrellas_vacias
+        color_amarillo = '\033[93m'  # Código ANSI para color amarillo
+        reset = '\033[0m'
+        estrellas_llenas = f'{color_amarillo}★' * valoracion  # Estrellas llenas en color amarillo
+        estrellas_vacias = '☆' * (5 - valoracion)  # Estrellas vacías
+        return estrellas_llenas + estrellas_vacias + reset
     except ValueError:
         return 'Sin valoración'
 
@@ -68,7 +70,7 @@ def visualizar_receta(conexion, receta_id):
         print(f"Valoración promedio: {valoracion_estrellas}")
         return True
     else:
-        print("Receta no encontrada.")
+        print("\033[1m\033[31mReceta no encontrada.\033[0m")
         return False
 
 # Dejar una valoración
@@ -78,7 +80,7 @@ def dejar_valoracion(conexion, receta_id):
         if opcion == 'si':
             while True:
                 try:
-                    valor = int(input("Ingrese la valoración (1-5): ").strip())
+                    valor = int(input("\nIngrese la valoración (1-5): ").strip())
                     if 1 <= valor <= 5:
                         break
                     else:
@@ -92,7 +94,7 @@ def dejar_valoracion(conexion, receta_id):
 
             # Mostrar la valoración en estrellas
             valoracion_estrellas = estrellas(valor)
-            print(f"Valoración registrada exitosamente: {valoracion_estrellas}. ¡Gracias por tu aporte!")
+            print(f"\033[1m\033[34mValoración registrada exitosamente: {valoracion_estrellas}. ¡Gracias por tu aporte!\033[0m")
             break
         elif opcion == 'no':
             print("Gracias por tu tiempo. Regresando al menú principal...")
@@ -120,14 +122,14 @@ def buscar_receta(conexion):
         if visualizar_receta(conexion, receta_id):
             dejar_valoracion(conexion, receta_id)
     else:
-        print("No se encontraron coincidencias.")
+        print("\033[1m\033[31mNo se encontraron coincidencias.\033[0m")
 
 # Crear receta
 def crear_receta(conexion):
-    nombre_postre = input("Nombre del postre: ").strip()
-    tipo_postre = input("Tipo de postre (postre caliente/postre frío): ").strip()
-    descripcion = input("Descripción: ").strip()
-    tiempo_preparacion = int(input("Tiempo de preparación (en minutos): ").strip())
+    nombre_postre = input("\033[1m\033[37m✦ Nombre del postre:\033[0m ").strip()
+    tipo_postre = input("\033[1m\033[37m✦ Tipo de postre (postre caliente/postre frío):\033[0m ").strip()
+    descripcion = input("\033[1m\033[37m✦ Descripción:\033[0m ").strip()
+    tiempo_preparacion = int(input("\033[1m\033[37m✦ Tiempo de preparación (en minutos):\033[0m ").strip())
 
     cursor = conexion.cursor()
 
@@ -137,7 +139,8 @@ def crear_receta(conexion):
         VALUES (%s, %s, %s, %s, %s)
     """, (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, 1))  # Asignar usuario_id válido
     conexion.commit()
-    print("Receta creada exitosamente.")
+    print("\033[1m\033[32mReceta creada exitosamente.\033[0m")
+
 
 # Registro / Inicio de sesión
 def registro_o_inicio_sesion():
@@ -145,44 +148,48 @@ def registro_o_inicio_sesion():
     app.conectar()
 
     while True:
-        print("\n--- Registro e Inicio de Sesión ---")
-        print("1. Registrar nuevo usuario")
-        print("2. Iniciar sesión")
-        print("3. Salir")
+        print('\t\t\t\t\t\t\t\t\t\033[35;1m' + 'ChefHub' + '\033[0m')
+        print('\033[32;1m' + '+' + '-' * 78 + '+\n' + '|' + '--- Registro e Inicio de Sesión ---'.center(
+            78) + '|\n' + '+' + '-' * 78 + '\033[0m')
+        print('\033[1;3m1. Registrar nuevo usuario\033[0m')
+        print('\033[1;3m2. Iniciar sesión\033[0m')
+        print('\033[1;3m3. Salir\033[0m')
 
-        opcion = input("Seleccione una opción: ").strip()
+        opcion = input("\nSeleccione una opción: ").strip()
 
         if opcion == '1':
             nombre = app.registrarUsuarios()
             if nombre:
-                print(f"¡Bienvenido, {nombre}!")
+                print(f'\033[32;1m' + f'¡Bienvenido, {nombre}!'+ '\033[0m')
                 return app
         elif opcion == '2':
             nombre = app.iniciarSesion()
             if nombre:
-                print(f"¡Bienvenido, {nombre}!")
+                print(f'\033[32;1m' + f'¡Bienvenido, {nombre}!'+ '\033[0m')
                 return app
         elif opcion == '3':
             print("Hasta luego.")
             app.cerrarConexion()
             exit()
         else:
-            print("Opción no válida. Intente nuevamente.")
+            print('\033[31;1mOpción no válida. Intente nuevamente.\033[0m')
 
 # Menú principal
 def menu_principal():
+    app = registro_o_inicio_sesion()
     conexion = crear_conexion()
     if not conexion:
         return
 
     while True:
-        print("\n--- Menú Principal ---")
-        print("1. Mostrar recetas existentes")
-        print("2. Buscar receta")
-        print("3. Crear receta")
-        print("4. Salir")
+        print('\033[35;1m' + '+' + '-' * 78 + '+\n' + '|' + 'Menú Principal'.center(
+            78) + '|\n' + '+' + '-' * 78 + '\033[0m')
+        print("\033[1m\033[3m\033[37m1. Mostrar recetas existentes\033[0m")
+        print("\033[1m\033[3m\033[37m2. Buscar receta\033[0m")
+        print("\033[1m\033[3m\033[37m3. Crear receta\033[0m")
+        print("\033[1m\033[3m\033[37m4. Salir\033[0m")
 
-        opcion = input("Seleccione una opción: ").strip().lower()
+        opcion = input("\nSeleccione una opción: ").strip().lower()
 
         if opcion == '1':
             mostrar_recetas(conexion)
@@ -191,10 +198,10 @@ def menu_principal():
         elif opcion == '3':
             crear_receta(conexion)
         elif opcion == '4':
-            print("Gracias por usar ChefHub. ¡Hasta pronto!")
+            print("\033[1m\033[96mGracias por usar ChefHub. ¡Hasta pronto!\033[0m")
             break
         else:
-            print("Opción no válida. Intente nuevamente.")
+            print('\033[31;1mOpción no válida. Intente nuevamente.\033[0m')
 
     conexion.close()
     app.cerrarConexion()
