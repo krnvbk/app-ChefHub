@@ -101,9 +101,9 @@ def crear_receta(conexion):
     
     cursor = conexion.cursor()
     cursor.execute("""
-        INSERT INTO recetas (nombre_postre, descripcion, tiempo_preparacion, imagen, tipo_postre, usuario_id)
+        INSERT INTO recetas (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, usuario_id)
         VALUES (%s, %s, %s, %s, %s, %s)
-    """, (nombre_postre, descripcion, tiempo_preparacion, 'imagen_default.jpg', tipo_postre, 1))
+    """, (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, 1))
     conexion.commit()
     print("Receta creada exitosamente.")
 
