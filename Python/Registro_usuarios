@@ -1,0 +1,119 @@
+import mysql.connector, re
+
+class Error(Exception):
+    pass
+
+class App:
+    def __init__(self):
+        self._host = "localhost"
+        self._user = "root"
+        self._database = "chefhub"
+
+    def conectar(self):
+        try:
+            self._conn = mysql.connector.connect(
+                host=self._host,
+                user=self._user,
+                database=self._database,
+                password=self._password
+            )
+            if self._conn.is_connected():
+                self._cursor = self._conn.cursor()
+
+        except mysql.connector.Error as e:
+            raise Error(f"Error de conexión: {e}")
+
+    def cerrarConexion(self):
+        if self._conn and self._conn.is_connected():
+            self._cursor.close()
+            self._conn.close()
+
+    def registrarUsuarios(self):
+        try:
+            print("Registro de Usuarios")
+
+            # Validar formato de correo
+            def validarCorreo(correo):
+                regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+                return re.match(regex, correo)
+
+            nombre = input("Nombre: ")
+            correo_electronico = input("E-mail: ")
+
+            # Validar que el correo tiene el formato correcto
+            while not validarCorreo(correo_electronico):
+                print("Correo electrónico no válido. Debe contener '@' y un dominio válido.")
+                correo_electronico = input("E-mail: ")
+
+            contrasena = input("Contraseña: ")
+            confirmacion_contrasena = input("Confirmar Contraseña: ")
+
+            # Validar que las contraseñas coinciden
+            while contrasena != confirmacion_contrasena:
+                print("Las contraseñas no coinciden. Intenta de nuevo.")
+                contrasena = input("Contraseña: ")
+                confirmacion_contrasena = input("Confirmar Contraseña: ")
+
+            # Verificar si el correo ya está registrado
+            query_verificar = """
+                SELECT correo_electronico FROM usuarios WHERE correo_electronico = %s
+            """
+            self._cursor.execute(query_verificar, (correo_electronico,))
+            resultado = self._cursor.fetchone()
+
+            if resultado:
+                print("Este correo ya está registrado. Intenta con otro.")
+                return self.registrarUsuarios()  # Reiniciar el registro si ya existe
+
+            # Insertar el nuevo usuario si todo está correcto
+            query_insertar = """
+                INSERT INTO usuarios (nombre, correo_electronico, contrasena)
+                VALUES (%s, %s, %s)
+            """
+            self._cursor.execute(query_insertar, (nombre, correo_electronico, contrasena))
+            self._conn.commit()
+            print("Te has registrado exitosamente.")
+            return nombre  # Retornar el nombre del usuario registrado
+
+        except mysql.connector.Error as e:
+            raise Error(f"Error de MySQL: {e}")
+        except Exception as e:
+            raise Error(f"Ha ocurrido un error inesperado: {e}")
+
+    def iniciarSesion(self):
+        try:
+            print("Inicio de sesión")
+            correo_electronico = input("E-mail: ")
+
+            # Verificar si el correo está registrado
+            query_verificar = """
+                SELECT correo_electronico FROM usuarios WHERE correo_electronico = %s
+            """
+            self._cursor.execute(query_verificar, (correo_electronico,))
+            resultado = self._cursor.fetchone()
+
+            if not resultado:
+                print("Este correo no está registrado. Por favor, regístrate antes de intentar iniciar sesión.")
+                return self.iniciarSesion()  # Reiniciar la función si el correo no existe
+
+            contrasena = input("Contraseña: ")
+
+            # Verificar correo y contraseña
+            query_login = """
+                SELECT nombre FROM usuarios 
+                WHERE correo_electronico = %s AND contrasena = %s
+            """
+            self._cursor.execute(query_login, (correo_electronico, contrasena))
+            usuario = self._cursor.fetchone()
+
+            if usuario:
+                print(f"Bienvenido, {usuario[0]}!")
+                return usuario[0]  # Retornar el nombre del usuario que inició sesión
+            else:
+                print("Contraseña incorrecta. Intenta de nuevo.")
+                return self.iniciarSesion()  # Reiniciar si la contraseña es incorrecta
+
+        except mysql.connector.Error as e:
+            raise Error(f"Error de MySQL: {e}")
+        except Exception as e:
+            raise Error(f"Ha ocurrido un error inesperado: {e}")
