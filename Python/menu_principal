@@ -7,7 +7,8 @@ def crear_conexion():
         conexion = mysql.connector.connect(
             host='localhost',
             database='chefhub',
-            user='root'
+            user='root',
+            password = 'K.ppw100@!'
         )
         if conexion.is_connected():
             return conexion
@@ -42,7 +43,7 @@ def visualizar_receta(conexion, receta_id):
         GROUP BY recetas.receta_id
     """, (receta_id,))
     receta = cursor.fetchone()
-    
+
     if receta:
         print(f"\n{receta['nombre_postre']} - {receta['tipo_postre']}")
         print(f"Tiempo de preparación: {receta['tiempo_preparacion']} minutos")
@@ -80,12 +81,12 @@ def buscar_receta(conexion):
         WHERE LOWER(nombre_postre) LIKE %s OR LOWER(tipo_postre) LIKE %s
     """, (f'%{busqueda}%', f'%{busqueda}%'))
     resultados = cursor.fetchall()
-    
+
     if resultados:
         print("Coincidencias encontradas:")
         for resultado in resultados:
             print(f"ID: {resultado['receta_id']} - {resultado['nombre_postre']} (Tipo: {resultado['tipo_postre']})")
-        
+
         receta_id = int(input("Ingrese el ID de la receta que desea visualizar: ").strip())
         if visualizar_receta(conexion, receta_id):
             dejar_valoracion(conexion, receta_id)
@@ -95,15 +96,16 @@ def buscar_receta(conexion):
 # Crear receta
 def crear_receta(conexion):
     nombre_postre = input("Nombre del postre: ").strip()
-    tipo_postre = input("Tipo de postre(postre caliente/postre frío): ").strip()
+    tipo_postre = input("Tipo de postre (postre caliente/postre frío): ").strip()
     descripcion = input("Descripción: ").strip()
     tiempo_preparacion = int(input("Tiempo de preparación (en minutos): ").strip())
-    
+
     cursor = conexion.cursor()
+    # Cambiar 0 por un usuario_id válido
     cursor.execute("""
         INSERT INTO recetas (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, usuario_id)
-        VALUES (%s, %s, %s, %s, %s, %s)
-    """, (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, 1))
+        VALUES (%s, %s, %s, %s, %s)
+    """, (nombre_postre, descripcion, tiempo_preparacion, tipo_postre, 1))  # Asignar usuario_id válido
     conexion.commit()
     print("Receta creada exitosamente.")
 
@@ -112,16 +114,16 @@ def menu_principal():
     conexion = crear_conexion()
     if not conexion:
         return
-    
+
     while True:
         print("\n--- Menú Principal ---")
         print("1. Mostrar recetas existentes")
         print("2. Buscar receta")
         print("3. Crear receta")
         print("4. Salir")
-        
+
         opcion = input("Seleccione una opción: ").strip().lower()
-        
+
         if opcion == '1':
             mostrar_recetas(conexion)
         elif opcion == '2':
