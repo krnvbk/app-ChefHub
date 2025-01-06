@@ -1,6 +1,16 @@
 # app-ChefHub
 ## Introducción
-El proyecto ChefHub se trata de una base de datos de recetas de postres ecuatorianos que tiene como objetivo que usuarios puedan descubrir recetas tradicionales de postres ecuatorianos. Esta base de datos será una herramienta útil tanto para entusiastas de la cocina como para aquellos interesados en la gastronomía ecuatoriana, proporcionando una colección diversa de recetas detalladas y auténticas.
+Introducción
+El proyecto ChefHub se trata de una Aplicación Web que servirá como un repositorio de recetas de postres ecuatorianos, la cual será una herramienta útil tanto para entusiastas de la cocina como para aquellos interesados en la gastronomía ecuatoriana, proporcionando una colección diversa de recetas detalladas y auténticas. Además, ChefHub busca rescatar y preservar el patrimonio culinario del Ecuador, fomentando la transmisión de conocimientos gastronómicos entre generaciones y contribuyendo a la difusión de la identidad cultural del país.
+
+### Propósito
+El propósito principal de ChefHub es ofrecer una plataforma digital accesible y organizada que permita a los usuarios explorar, aprender y compartir recetas tradicionales de postres ecuatorianos. Al centralizar este conocimiento en un solo espacio, se pretende no solo facilitar el acceso a estas recetas, sino también incentivar su preparación, consumo y valoración, fortaleciendo el vínculo cultural entre las personas y su patrimonio gastronómico.
+
+### Objetivos
+- **Preservar recetas tradicionales:** Documentar y digitalizar recetas auténticas de postres ecuatorianos a través de la creación de un repositorio digital que permita recopilar recetas de diversas regiones del país, garantizando la permanencia de estas mismas y así evitando su pérdida con el tiempo.
+- **Facilitar el acceso a la información:** Proporcionar una plataforma intuitiva y fácil de usar donde cualquier usuario pueda acceder rápidamente a las recetas. Esto incluye el diseño de una interfaz clara y amigable, con herramientas de búsqueda avanzada y filtros por tipo de postre y criterios como "mejor valoradas".
+- **Fomentar el aprendizaje culinario:** Ofrecer instrucciones claras y detalladas que faciliten la preparación de los postres. Cada receta incluirá listas de ingredientes precisas, tiempos de preparación estimados, y procedimientos explicados paso a paso; con la finalidad de que el contenido sea fácil de entender y a la vez sea intuitivo.
+- **Promover la interacción entre usuarios:** Fomentar la creación de una comunidad activa donde los usuarios puedan compartir recetas familiares y variaciones de recetas tradicionales, fortaleciendo así el intercambio de conocimientos culinarios.
 
 ## Contexto del Problema
 La gastronomía ecuatoriana, rica en tradición, carece de un acceso centralizado a recetas de postres, lo que dificulta que tanto locales como extranjeros las descubran y preparen. Esto resalta la necesidad de una plataforma digital que permita a los usuarios descubrir, compartir y preservar recetas tradicionales, con un enfoque en la autenticidad. A pesar del interés en la cocina ecuatoriana, el acceso a recetas detalladas y valoradas es limitado. El reto es crear una plataforma fácil de usar, que permita a los usuarios registrar, valorar y gestionar recetas, con funciones avanzadas de búsqueda.
