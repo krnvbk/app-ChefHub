@@ -8,12 +8,20 @@ El propósito principal de ChefHub es ofrecer una plataforma digital accesible y
 
 ### Objetivos
 - **Preservar recetas tradicionales:** Documentar y digitalizar recetas auténticas de postres ecuatorianos a través de la creación de un repositorio digital que permita recopilar recetas de diversas regiones del país, garantizando la permanencia de estas mismas y así evitando su pérdida con el tiempo.
+  
 - **Facilitar el acceso a la información:** Proporcionar una plataforma intuitiva y fácil de usar donde cualquier usuario pueda acceder rápidamente a las recetas. Esto incluye el diseño de una interfaz clara y amigable, con herramientas de búsqueda avanzada y filtros por tipo de postre y criterios como "mejor valoradas".
+  
 - **Fomentar el aprendizaje culinario:** Ofrecer instrucciones claras y detalladas que faciliten la preparación de los postres. Cada receta incluirá listas de ingredientes precisas, tiempos de preparación estimados, y procedimientos explicados paso a paso; con la finalidad de que el contenido sea fácil de entender y a la vez sea intuitivo.
+  
 - **Promover la interacción entre usuarios:** Fomentar la creación de una comunidad activa donde los usuarios puedan compartir recetas familiares y variaciones de recetas tradicionales, fortaleciendo así el intercambio de conocimientos culinarios.
+  
 
 ## Contexto del Problema
-La gastronomía ecuatoriana, rica en tradición, carece de un acceso centralizado a recetas de postres, lo que dificulta que tanto locales como extranjeros las descubran y preparen. Esto resalta la necesidad de una plataforma digital que permita a los usuarios descubrir, compartir y preservar recetas tradicionales, con un enfoque en la autenticidad. A pesar del interés en la cocina ecuatoriana, el acceso a recetas detalladas y valoradas es limitado. El reto es crear una plataforma fácil de usar, que permita a los usuarios registrar, valorar y gestionar recetas, con funciones avanzadas de búsqueda.
+La gastronomía ecuatoriana, conocida por su riqueza cultural y diversidad, carece de una plataforma digital centralizada que recopile y preserve recetas auténticas de postres tradicionales. Aunque el patrimonio inmaterial, como las recetas culinarias, es crucial para la identidad cultural, la UNESCO advierte que su transmisión oral y la falta de documentación adecuada ponen en riesgo su preservación.
+
+Plataformas internacionales como Cookpad y Tasty han demostrado el éxito de herramientas digitales para compartir recetas, pero rara vez incluyen representaciones fieles de la gastronomía ecuatoriana, dejando un vacío significativo en su difusión.
+
+Ante esta realidad, surge la necesidad de una plataforma digital accesible y funcional que permita descubrir, compartir y valorar recetas auténticas de postres ecuatorianos, con funciones avanzadas de búsqueda y una interfaz intuitiva. De esta manera, el proyecto ChefHub busca contribuir activamente al rescate y difusión del patrimonio gastronómico del país.
 
 ## Analisis de requerimiento
 Busca ser una plataforma única que recopile recetas de postres ecuatorianos, permitiendo a los usuarios descubrir, compartir y valorar recetas tradicionales. Para lograr esto, es esencial definir con claridad todas las necesidades del sistema, cómo se gestionarán los datos, y cuál será la lógica de negocio. A continuación, se presenta un análisis detallado, abarcando tanto las necesidades funcionales como no funcionales, asegurando que todos los aspectos del sistema estén cubiertos de manera comprensible y humanizada.
