@@ -1,19 +1,19 @@
 # app-ChefHub
 ## Introducción
 Introducción
-El proyecto ChefHub se trata de una Aplicación Web que servirá como un repositorio de recetas de postres ecuatorianos, la cual será una herramienta útil tanto para entusiastas de la cocina como para aquellos interesados en la gastronomía ecuatoriana, proporcionando una colección diversa de recetas detalladas y auténticas. Además, ChefHub busca rescatar y preservar el patrimonio culinario del Ecuador, fomentando la transmisión de conocimientos gastronómicos entre generaciones y contribuyendo a la difusión de la identidad cultural del país.
+El proyecto ChefHub se trata de una Aplicación Web que servirá como un repositorio de recetas de postres ecuatorianos, la cual será una herramienta útil tanto para entusiastas de la cocina como para aquellos interesados en la gastronomía ecuatoriana, proporcionando una colección diversa de recetas detalladas. Además, ChefHub busca rescatar y preservar el patrimonio culinario del Ecuador, fomentando la transmisión de conocimientos gastronómicos entre generaciones y contribuyendo a la difusión de la identidad cultural del país.
 
 ### Propósito
-El propósito principal de ChefHub es ofrecer una plataforma digital accesible y organizada que permita a los usuarios explorar, aprender y compartir recetas tradicionales de postres ecuatorianos. Al centralizar este conocimiento en un solo espacio, se pretende no solo facilitar el acceso a estas recetas, sino también incentivar su preparación, consumo y valoración, fortaleciendo el vínculo cultural entre las personas y su patrimonio gastronómico.
+El propósito principal de ChefHub es ofrecer una plataforma digital accesible y organizada que permita a los usuarios explorar y aprender recetas tradicionales de postres ecuatorianos. Al centralizar este conocimiento en un solo espacio, se pretende no solo facilitar el acceso a estas recetas, sino también incentivar su preparación y consumo fortaleciendo el vínculo cultural entre las personas y su patrimonio gastronómico.
 
 ### Objetivos
-- **Preservar recetas tradicionales:** Documentar y digitalizar recetas auténticas de postres ecuatorianos a través de la creación de un repositorio digital que permita recopilar recetas de diversas regiones del país, garantizando la permanencia de estas mismas y así evitando su pérdida con el tiempo.
-  
-- **Facilitar el acceso a la información:** Proporcionar una plataforma intuitiva y fácil de usar donde cualquier usuario pueda acceder rápidamente a las recetas. Esto incluye el diseño de una interfaz clara y amigable, con herramientas de búsqueda avanzada y filtros por tipo de postre y criterios como "mejor valoradas".
-  
-- **Fomentar el aprendizaje culinario:** Ofrecer instrucciones claras y detalladas que faciliten la preparación de los postres. Cada receta incluirá listas de ingredientes precisas, tiempos de preparación estimados, y procedimientos explicados paso a paso; con la finalidad de que el contenido sea fácil de entender y a la vez sea intuitivo.
-  
-- **Promover la interacción entre usuarios:** Fomentar la creación de una comunidad activa donde los usuarios puedan compartir recetas familiares y variaciones de recetas tradicionales, fortaleciendo así el intercambio de conocimientos culinarios.
+- **Promover la gastronomía ecuatoriana y mundial:** Crear una plataforma que difunda recetas tradicionales y contemporáneas, poniendo especial énfasis en los postres ecuatorianos, para preservar y compartir la riqueza cultural culinaria.
+
+- **Facilitar el acceso a recetas organizadas:** Proveer una herramienta digital que permita a los usuarios explorar, guardar y organizar recetas de manera eficiente y personalizada.
+
+- **Fomentar la creatividad culinaria:** Brindar un espacio donde los usuarios puedan compartir sus propias recetas, intercambiar ideas y aprender nuevas técnicas de cocina.
+
+- **Ofrecer una experiencia de usuario intuitiva y atractiva:** Desarrollar una aplicación con una interfaz amigable que simplifique la navegación, haciendo que explorar y cocinar sea más accesible para todos.
   
 
 ## Contexto del Problema
@@ -27,17 +27,20 @@ Ante esta realidad, surge la necesidad de una plataforma digital accesible y fun
 Busca ser una plataforma única que recopile recetas de postres ecuatorianos, permitiendo a los usuarios descubrir, compartir y valorar recetas tradicionales. Para lograr esto, es esencial definir con claridad todas las necesidades del sistema, cómo se gestionarán los datos, y cuál será la lógica de negocio. A continuación, se presenta un análisis detallado, abarcando tanto las necesidades funcionales como no funcionales, asegurando que todos los aspectos del sistema estén cubiertos de manera comprensible y humanizada.
 
 ## Funcionalidades Clave:
-### 1. Recetas de Postres:
-- Cada receta incluirá detalles específicos como __el nombre del postre, tipo de postre una descripción, lista de ingredientes con cantidades precisas, preparación detallada, tiempo de preparación.__
-- Las recetas estarán categorizadas por tipos de postres ecuatorianos como __"postres fríos", "postres calientes"__.
-### 2. Ingredientes y Medidas:
-- La base de datos incluirá una tabla de ingredientes comunes utilizados en la cocina ecuatoriana, junto con sus medidas estándar y nombres en español.
-### 3. Usuarios y Comunidad:
-- Los usuarios podrán __registrarse__, __iniciar sesión__ y __contribuir__ al repositorio de recetas. Podrán subir nuevas recetas y valorar las recetas existentes.
-### 4. Búsqueda Avanzada:
-- Los usuarios podrán buscar recetas por nombre de postre o tipo de postre.
-### 5. Valoración:
-- Los usuarios podrán dejar valoraciones en las recetas, viendose reflejada en un promedio de valoraciones.
+### 1. Recetas Tradicionales Detalladas:
+La aplicación ofrece una colección de recetas ecuatorianas explicadas paso a paso, incluyendo ingredientes, instrucciones detalladas y fotografías ilustrativas para facilitar su preparación.
+
+### 2. Navegación Intuitiva:
+Una estructura clara y accesible permite a los usuarios explorar fácilmente las distintas recetas a través de un diseño simple y amigable.
+
+### 3. Organización de Recetas Individuales:
+Cada receta cuenta con su propia página dedicada, donde se presenta información completa, manteniendo un diseño consistente y atractivo.
+
+### 4. Vínculos Rápidos y Dinámicos:
+Botones integrados que facilitan la navegación entre la página principal, la lista de recetas y las recetas individuales, mejorando la experiencia del usuario.
+
+### 5. Adaptabilidad Visual:
+Un diseño adaptable que permite que la aplicación sea funcional y visualmente atractiva tanto en dispositivos móviles como en computadoras de escritorio.
 
    
 ## Modelo Relacional
@@ -50,7 +53,6 @@ Busca ser una plataforma única que recopile recetas de postres ecuatorianos, pe
   2. Recetas: Almacena información detallada sobre cada receta de postre ecuatoriano.
   3. Ingredientes: Contiene una lista de ingredientes comunes utilizados en las recetas.
   4. Recetas_Ingredientes: Relaciona cada receta con los ingredientes necesarios, especificando la cantidad requerida para cada uno.
-  5. Valoraciones: Registra las valoraciones de los usuarios para cada receta.
 
 NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/blob/main/BD/chefhub.sql)
 
@@ -67,21 +69,13 @@ Validación de la entrada del usuario** (asegurar que el correo electrónico ten
 #### Formulario de Inicio de Sesión:
 - Los usuarios ingresarán su correo electrónico y contraseña.
 
-### 3. Menu Principal
+### 3. Menú Principal
 Una vez autenticado, al usuario se le mostrará un menú con las siguientes opciones:
 - **Mostrar recetas existentes**
-    - Mostrará una lista de todas las recetas disponibles, con tiempo de preparación, y valoración promedio.
-    - Opción para filtrar y ordenar las recetas por diferentes criterios (**más recientes** y  **mejor valoradas**).
-
-- **Buscar receta:** Un formulario de búsqueda con filtros para buscar recetas por nombre o tipo de postre. Automáticamente, se presentan todas las coincidencias posibles, unicamente por nombre de postre.
-    - **Visualizar receta**: Aparece luego de devolver todas las coincidencias. Muestra toda la información disponible de la receta que desee en el usuario, por medio de indicar su número asignado.
-      - Se mostrará una página detallada con la informacion correspondiente y la valoracion promedio.
-    - **Dejar una valoración:** Aparece luego de visualizar una receta en especifico (emplea condicional, esto es opcional). El usuario puede dejar una valoración (de 1 a 5 estrellas), de la cual posteriormente se calculará el promedio
+    - Mostrará una lista de todas las recetas disponibles con tiempo de preparación.
  
 - **Crear receta**: Un formulario que permitirá agregar una receta a la base de datos, incluyendo campos para:
   - Nombre del postre
-  - Tipo de postre
-  - Etiqueta
   - Descripción
   - Preparación
   - Lista de ingredientes con cantidades precisas
