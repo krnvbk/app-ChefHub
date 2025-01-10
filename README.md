@@ -74,27 +74,7 @@ Estas características están diseñadas para brindar una experiencia de usuario
 ![image](img/modelorelacional.jpg)
 
 ## Modelo relacional en Django
-from django.db import models
 
-class Recipe(models.Model):
-title = models.CharField(max_length=100, unique=True)
-ingredients = models.TextField()
-preparation = models.TextField()
-image = models.ImageField(upload_to='img/', blank=True, null=True)
- 
-    def __str__(self):
-        return self.title
-from django.db import models
- 
- 
-class Recipe(models.Model):
-title = models.CharField(max_length=100, unique=True)
-ingredients = models.TextField()
-preparation = models.TextField()
-image = models.ImageField(upload_to='img/', blank=True, null=True)
- 
-    def __str__(self):
-        return self.title
         
 ## Tablas Principales
 
