@@ -39,20 +39,30 @@ Busca ser una plataforma única que recopile recetas de postres ecuatorianos, pe
 ## Funcionalidades Clave:
 ### 1. Recetas Tradicionales Detalladas:
 La aplicación ofrece una colección de recetas ecuatorianas explicadas paso a paso, incluyendo ingredientes, instrucciones detalladas y fotografías ilustrativas para facilitar su preparación.
+**Ingredientes completos:** Una lista organizada y precisa de los insumos necesarios para preparar el postre, garantizando que el usuario tenga toda la información requerida.
+**Instrucciones detalladas paso a paso:** Se asegura que incluso los principiantes puedan seguir las recetas sin dificultad, logrando resultados consistentes.
+**Fotografías ilustrativas:** Imágenes de referencia que muestran cómo debería lucir el postre terminado, ofreciendo una guía visual que mejora la confianza del usuario durante la preparación.
 
 ### 2. Navegación Intuitiva:
-Una estructura clara y accesible permite a los usuarios explorar fácilmente las distintas recetas a través de un diseño simple y amigable.
+La navegación de la aplicación está diseñada para ser simple y eficiente, incluso para usuarios con poca experiencia tecnológica. Las características clave incluyen:
+**Diseño estructurado:** El contenido está organizado en secciones lógicas, como la página principal, categorías de recetas y recetas individuales.
+**Indicadores visuales claros:** Botones y enlaces bien definidos guían al usuario por la plataforma sin confusión.
+Esta estructura minimiza la curva de aprendizaje, permitiendo que los usuarios se enfoquen en disfrutar y compartir recetas en lugar de luchar con la interfaz.
 
 ### 3. Organización de Recetas Individuales:
 Cada receta cuenta con su propia página dedicada, donde se presenta información completa, manteniendo un diseño consistente y atractivo.
+**Mantener un diseño atractivo y consistente:** Las recetas están diseñadas para ser visualmente agradables, utilizando estilos modernos que refuerzan la identidad de la aplicación.
 
 ### 4. Vínculos Rápidos y Dinámicos:
 Botones integrados que facilitan la navegación entre la página principal, la lista de recetas y las recetas individuales, mejorando la experiencia del usuario.
+**Acceso directo a la lista de recetas:** Un clic desde la página principal lleva a los usuarios a explorar el catálogo completo de recetas.
 
 ### 5. Adaptabilidad Visual:
 Un diseño adaptable que permite que la aplicación sea funcional y visualmente atractiva tanto en dispositivos móviles como en computadoras de escritorio.
 
-   
+### Impacto de funcionalidades
+Estas características están diseñadas para brindar una experiencia de usuario optimizada y mantener el enfoque en la preservación, disfrute y difusión de la cultura gastronómica ecuatoriana. Al combinar accesibilidad, diseño intuitivo y contenido relevante, la aplicación busca convertirse en una herramienta indispensable para amantes de la cocina y promotores de la tradición.
+
 ## Modelo Relacional
 
 ![image](img/modelorelacional.jpg)
