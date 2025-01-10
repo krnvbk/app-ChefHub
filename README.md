@@ -74,7 +74,7 @@ Estas características están diseñadas para brindar una experiencia de usuario
 ![image](img/modelorelacional.jpg)
 
 ## Modelo relacional en Django
-
+![image](img/modelo-relacional-django.png)
         
 ## Tablas Principales
 
