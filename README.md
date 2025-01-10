@@ -1,4 +1,11 @@
 # app-ChefHub
+
+# Proyecto ABP
+Desarrollo de una aplicación en Django
+
+# Título del proyecto
+Aplicación en Django - Repositorio de recetas ChefHub 
+
 ## Introducción
 El proyecto ChefHub se trata de una Aplicación Web que servirá como un repositorio de recetas de postres ecuatorianos, la cual será una herramienta útil tanto para entusiastas de la cocina como para aquellos interesados en la gastronomía ecuatoriana, proporcionando una colección diversa de recetas detalladas. Además, ChefHub busca rescatar y preservar el patrimonio culinario del Ecuador, fomentando la transmisión de conocimientos gastronómicos entre generaciones y contribuyendo a la difusión de la identidad cultural del país.
 
