@@ -69,10 +69,33 @@ Un diseño adaptable que permite que la aplicación sea funcional y visualmente 
 ### Impacto de funcionalidades
 Estas características están diseñadas para brindar una experiencia de usuario optimizada y mantener el enfoque en la preservación, disfrute y difusión de la cultura gastronómica ecuatoriana. Al combinar accesibilidad, diseño intuitivo y contenido relevante, la aplicación busca convertirse en una herramienta indispensable para amantes de la cocina y promotores de la tradición.
 
-## Modelo Relacional
+## Modelo Relacional en Mysql
 
 ![image](img/modelorelacional.jpg)
-   
+
+## Modelo relacional en Django
+from django.db import models
+
+class Recipe(models.Model):
+    title = models.CharField(max_length=100, unique=True)
+    ingredients = models.TextField()
+    preparation = models.TextField()
+    image = models.ImageField(upload_to='img/', blank=True, null=True)
+ 
+    def __str__(self):
+        return self.title
+from django.db import models
+ 
+ 
+class Recipe(models.Model):
+    title = models.CharField(max_length=100, unique=True)
+    ingredients = models.TextField()
+    preparation = models.TextField()
+    image = models.ImageField(upload_to='img/', blank=True, null=True)
+ 
+    def __str__(self):
+        return self.title
+        
 ## Tablas Principales
 
   1. Usuarios: Almacena información sobre los usuarios registrados.
