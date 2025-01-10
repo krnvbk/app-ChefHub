@@ -71,7 +71,7 @@ Estas características están diseñadas para brindar una experiencia de usuario
 
 ## Modelo Relacional en Mysql
 
-![image](img/modelorelacional.jpg)
+![image](img/modelo-relacional-mysql.png)
 
 ## Modelo relacional en Django
 ![image](img/modelo-relacional-django.png)
