@@ -58,30 +58,57 @@ NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://g
 
 ## Diseño del Sistema
 
-### 1. Menú de Inicio
-- Al iniciar el programa, los usuarios verán un saludo bienvenida con opciones claras para **"Registrarse"** o **"Iniciar Sesión"**. 
+### 1. Arquitectura General
+El sistema está basado en el marco de trabajo Django y sigue el patrón de diseño Modelo-Vista-Controlador (MVC). Los componentes principales son:
 
-### 2. Registro e Inicio de Sesión
-#### Formulario de Registro:
-- Los usuarios completarán un formulario con los siguientes campos: **Nombre, Correo Electrónico, Contraseña y Confirmación de Contraseña.
-Validación de la entrada del usuario** (asegurar que el correo electrónico tenga el formato correcto y que las contraseñas coincidan).
-- Al enviar, el backend verificará si el correo ya está registrado y, si todo es correcto, creará un nuevo usuario en la base de datos.
-#### Formulario de Inicio de Sesión:
-- Los usuarios ingresarán su correo electrónico y contraseña.
+Modelo: Se extiende el modelo de receta para almacenar la información necesaria, como el título, ingredientes, pasos de preparación e imagen. Esto permite persistir los datos en la base de datos.
+Vista: Se crea una vista dedicada para manejar la lógica de subida de recetas, generación de páginas dinámicas y redirección.
+Plantillas (Templates): Se utiliza el sistema de plantillas de Django para renderizar dinámicamente las páginas de las recetas y actualizar la página de servicios.
 
-### 3. Menú Principal
-Una vez autenticado, al usuario se le mostrará un menú con las siguientes opciones:
-- **Mostrar recetas existentes**
-    - Mostrará una lista de todas las recetas disponibles con tiempo de preparación.
- 
-- **Crear receta**: Un formulario que permitirá agregar una receta a la base de datos, incluyendo campos para:
-  - Nombre del postre
-  - Descripción
-  - Preparación
-  - Lista de ingredientes con cantidades precisas
-  - Tiempo de preparación total
+### 2. Flujo de Trabajo del Usuario
+- **Acceso al Formulario de Subida:**
+El usuario registrado puede acceder al formulario mediante un botón en la página de recetas. Este formulario permite ingresar:
+- Título de la receta.
+- Lista de ingredientes (uno por línea).
+- Pasos de preparación (uno por línea).
+- Imagen representativa de la receta (opcional).
+- **Validación y Procesamiento de Datos:**
+Al enviar el formulario, el sistema valida los datos ingresados. Si todo es correcto:
+- Se almacena la información en la base de datos.
+- Se genera automáticamente una página HTML para la receta con un diseño consistente.
+- **Redirección Automática:**
+Una vez procesados los datos, el sistema redirige al usuario a la nueva página de la receta, permitiéndole visualizarla inmediatamente.
+- **Actualización de la Página de Servicios:**
+La nueva receta aparece automáticamente en la sección de servicios mediante una tarjeta visual (card) que incluye:
+- El título de la receta.
+- Una imagen representativa.
+- Un enlace directo a la página de la receta.
 
-  Validación de datos antes de enviar al backend. Al guardar, la receta se añadirá a la base de datos y será visible en el listado de recetas.
+### 3. Generación Automática de Páginas
+El sistema utiliza un método en la vista para generar un archivo HTML dinámico por receta. Las características clave de este proceso incluyen:
+- **Nombre del archivo dinámico:** El nombre del archivo HTML corresponde al título de la receta en formato URL-friendly.
+- **Estructura del contenido:**
+La página se genera extendiendo la plantilla base de la aplicación (base.html) para garantizar la consistencia visual.
+- **Contenido dinámico:**
+- Título de la receta.
+- Imagen vinculada desde el directorio estático.
+- Listas y pasos generados a partir de los datos ingresados.
 
-- **Salir**: Simplemente se cerrará el programa con un amigable mensaje de despedida, así como los créditos (nombre del autor).
+### 4. Modificación de la Página de Servicios
+Se utiliza un bucle dinámico en la plantilla services.html para recorrer y mostrar todas las recetas disponibles. Esto se logra con:
+- **Carga de datos desde la base de datos:** Cada receta se representa como una tarjeta (card) con los datos relevantes.
+- **Estilo coherente:** Se reutilizan los estilos existentes para garantizar un diseño uniforme.
+
+### 5. Manejo de Errores
+El sistema incluye validaciones y manejo de errores para garantizar una experiencia de usuario fluida:
+- Validación de campos obligatorios en el formulario.
+- Manejo de imágenes faltantes o con formatos no permitidos.
+- Redirección a una página de error si ocurre un problema inesperado.
+
+### 6. Tecnologías y Herramientas Utilizadas
+- Django: Para la gestión del backend y la lógica de generación dinámica de páginas.
+- HTML y CSS: Para las plantillas y el diseño visual de las páginas.
+- SQLite: Base de datos para almacenar las recetas.
+- Bootstrap: Para garantizar un diseño responsivo y atractivo en las páginas.
+- Jinja2: Motor de plantillas integrado en Django para la generación dinámica de contenido.
 
