@@ -83,7 +83,7 @@ Estas características están diseñadas para brindar una experiencia de usuario
   3. Ingredientes: Contiene una lista de ingredientes comunes utilizados en las recetas.
   4. Recetas_Ingredientes: Relaciona cada receta con los ingredientes necesarios, especificando la cantidad requerida para cada uno.
 
-NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](https://github.com/krnvbk/app-ChefHub/blob/main/BD/chefhub.sql)
+NOTE: Podrá descargar el scrip con el modelo fisico. ![Modelo fisico](BD/ChefHubBD.sql)
 
 ## Diseño del Sistema
 
